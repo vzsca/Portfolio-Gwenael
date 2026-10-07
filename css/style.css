@@ -151,6 +151,64 @@ a {
   font-size: .76rem;
 }
 
+.legal-intro {
+  max-width: 52rem;
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+  font-size: .9rem;
+}
+
+.legal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+  margin-top: 1rem;
+}
+
+.legal-card {
+  position: relative;
+  background: linear-gradient(135deg, var(--surface), var(--surface-3));
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.1rem 1.05rem;
+  box-shadow: 0 5px 18px rgba(0,0,0,.10);
+  transition: border-color .15s ease, transform .15s ease;
+}
+
+.legal-card:hover {
+  border-color: var(--border-light);
+  transform: translateY(-2px);
+}
+
+.legal-card h2 {
+  margin: .15rem 0 .7rem;
+  padding: 0 0 .55rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 1rem;
+}
+
+.legal-card p {
+  margin: .45rem 0;
+  color: var(--muted);
+}
+
+.legal-card strong {
+  color: var(--text);
+}
+
+.legal-label {
+  display: inline-block;
+  color: var(--accent);
+  font: 700 .68rem/1 Arial, Helvetica, sans-serif;
+  letter-spacing: .08em;
+  margin-bottom: .2rem;
+}
+
+.legal-back {
+  margin-top: 1.5rem;
+  font-size: .82rem;
+}
+
 .section-repliable {
   background: linear-gradient(135deg, var(--surface), var(--surface-3));
   border: 1px solid var(--border);
@@ -161,9 +219,7 @@ a {
   transition: border-color .15s ease, box-shadow .15s ease;
 }
 
-.section-repliable:hover {
-  border-color: var(--border-light);
-}
+.section-repliable:hover { border-color: var(--border-light); }
 
 .section-repliable > summary {
   cursor: pointer;
@@ -258,17 +314,11 @@ thead th {
   white-space: nowrap;
 }
 
-thead tr:first-child th {
-  border-bottom: 1px solid var(--border-light);
-}
+thead tr:first-child th { border-bottom: 1px solid var(--border-light); }
 
-tbody tr:nth-child(even) {
-  background: rgba(255,255,255,.012);
-}
+tbody tr:nth-child(even) { background: rgba(255,255,255,.012); }
 
-tbody tr:hover {
-  background: var(--accent-soft);
-}
+tbody tr:hover { background: var(--accent-soft); }
 
 td.case {
   width: 2rem;
@@ -348,8 +398,10 @@ footer {
     margin-left: 0;
   }
 
-  nav ul {
-    flex-wrap: wrap;
+  nav ul { flex-wrap: wrap; }
+
+  .legal-grid {
+    grid-template-columns: 1fr;
   }
 
   img {
