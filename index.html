@@ -15,7 +15,7 @@ layout: default
 <p>Réalisations effectuées dans le cadre de ma formation BTS SIO.</p>
 {% for p in projets_ecole %}
 <article class="carte">
-  <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+  <h3><a href="{{ p.url | relative_url }}">École {{ forloop.index }} — {{ p.title }}</a></h3>
   <p>{{ p.resume }}</p>
   <p class="meta">{{ p.date | date: "%m/%Y" }} · {{ p.cadre }}</p>
 </article>
@@ -25,22 +25,38 @@ layout: default
 <p>Projets réalisés en dehors des activités scolaires pour approfondir mes compétences.</p>
 {% for p in projets_perso %}
 <article class="carte">
-  <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+  <h3><a href="{{ p.url | relative_url }}">Perso {{ forloop.index }} — {{ p.title }}</a></h3>
   <p>{{ p.resume }}</p>
   <p class="meta">{{ p.date | date: "%m/%Y" }} · {{ p.cadre }}</p>
 </article>
 {% endfor %}
 
 <h2 id="competences">Compétences du bloc 1</h2>
-<p>Chaque croix renvoie au projet scolaire qui la prouve. Le tableau se remplit tout seul à chaque projet scolaire ajouté.</p>
+<p>Le tableau se met automatiquement à jour lorsque vous ajoutez un projet. Les colonnes sont numérotées séparément pour les projets scolaires et personnels.</p>
 <div class="defile">
 <table>
   <thead>
-    <tr><th scope="col">Compétence</th>{% for p in projets_ecole %}<th scope="col"><a href="{{ p.url | relative_url }}">P{{ forloop.rindex }}</a></th>{% endfor %}</tr>
+    <tr>
+      <th scope="col">Compétence</th>
+      {% for p in projets_ecole %}
+      <th scope="col"><a href="{{ p.url | relative_url }}">École {{ forloop.index }}</a></th>
+      {% endfor %}
+      {% for p in projets_perso %}
+      <th scope="col"><a href="{{ p.url | relative_url }}">Perso {{ forloop.index }}</a></th>
+      {% endfor %}
+    </tr>
   </thead>
   <tbody>
   {% for c in site.data.competences %}
-    <tr><th scope="row">{{ c.libelle }}</th>{% for p in projets_ecole %}<td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : {{ p.title }}">X</a>{% endif %}</td>{% endfor %}</tr>
+    <tr>
+      <th scope="row">{{ c.libelle }}</th>
+      {% for p in projets_ecole %}
+      <td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : {{ p.title }}">X</a>{% endif %}</td>
+      {% endfor %}
+      {% for p in projets_perso %}
+      <td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : {{ p.title }}">X</a>{% endif %}</td>
+      {% endfor %}
+    </tr>
   {% endfor %}
   </tbody>
 </table>
