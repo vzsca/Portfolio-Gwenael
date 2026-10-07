@@ -33,8 +33,10 @@ header {
 }
 
 main, footer {
-  width: calc(100% - 4rem);
+  width: 100%;
   margin: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .site {
@@ -49,9 +51,7 @@ main, footer {
   text-decoration: none;
 }
 
-nav {
-  margin-left: 1rem;
-}
+nav { margin-left: 1rem; }
 
 nav ul {
   list-style: none;
@@ -252,7 +252,8 @@ code {
 
 footer {
   margin-top: 2.5rem;
-  padding: .9rem 0 1.5rem;
+  padding-top: .9rem;
+  padding-bottom: 1.5rem;
   color: var(--muted);
   font-size: .75rem;
   border-top: 1px solid var(--border);
@@ -277,7 +278,8 @@ footer {
   }
 
   main, footer {
-    width: calc(100% - 2rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   nav {
