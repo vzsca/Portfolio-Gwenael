@@ -32,17 +32,25 @@ layout: default
 {% endfor %}
 
 <h2 id="competences">Compétences du bloc 1</h2>
-<p>Le tableau se met automatiquement à jour lorsque vous ajoutez un projet. Les colonnes sont numérotées séparément pour les projets scolaires et personnels.</p>
+<p>Le tableau se met automatiquement à jour lorsque vous ajoutez un projet. Les projets scolaires et personnels sont regroupés séparément.</p>
 <div class="defile">
 <table>
   <thead>
     <tr>
-      <th scope="col">Compétence</th>
+      <th scope="col" rowspan="2">Compétence</th>
+      {% if projets_ecole.size > 0 %}
+      <th scope="col" colspan="{{ projets_ecole.size }}">École</th>
+      {% endif %}
+      {% if projets_perso.size > 0 %}
+      <th scope="col" colspan="{{ projets_perso.size }}">Perso</th>
+      {% endif %}
+    </tr>
+    <tr>
       {% for p in projets_ecole %}
-      <th scope="col"><a href="{{ p.url | relative_url }}">École {{ forloop.index }}</a></th>
+      <th scope="col"><a href="{{ p.url | relative_url }}">{{ forloop.index }}</a></th>
       {% endfor %}
       {% for p in projets_perso %}
-      <th scope="col"><a href="{{ p.url | relative_url }}">Perso {{ forloop.index }}</a></th>
+      <th scope="col"><a href="{{ p.url | relative_url }}">{{ forloop.index }}</a></th>
       {% endfor %}
     </tr>
   </thead>
@@ -51,10 +59,10 @@ layout: default
     <tr>
       <th scope="row">{{ c.libelle }}</th>
       {% for p in projets_ecole %}
-      <td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : {{ p.title }}">X</a>{% endif %}</td>
+      <td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : École {{ forloop.index }}">X</a>{% endif %}</td>
       {% endfor %}
       {% for p in projets_perso %}
-      <td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : {{ p.title }}">X</a>{% endif %}</td>
+      <td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : Perso {{ forloop.index }}">X</a>{% endif %}</td>
       {% endfor %}
     </tr>
   {% endfor %}
