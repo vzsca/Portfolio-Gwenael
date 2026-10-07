@@ -11,5 +11,33 @@ layout: default
 
   {{ content }}
 
-  <p><a href="{{ '/' | relative_url }}#projets">Retour aux projets</a></p>
+  <p><a href="{{ '/' | relative_url }}#projets-ecole">Retour aux projets</a></p>
 </article>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("article > h2").forEach(function (heading) {
+    const title = heading.textContent.trim();
+    if (title !== "Description de l'activité" && title !== "Productions et preuves") return;
+
+    const details = document.createElement("details");
+    details.className = "section-repliable projet-section";
+
+    const summary = document.createElement("summary");
+    summary.textContent = title;
+    details.appendChild(summary);
+
+    const content = document.createElement("div");
+    content.className = "section-contenu";
+
+    let node = heading.nextElementSibling;
+    while (node) {
+      const next = node.nextElementSibling;
+      content.appendChild(node);
+      node = next;
+    }
+
+    details.appendChild(content);
+    heading.replaceWith(details);
+  });
+});
+</script>
