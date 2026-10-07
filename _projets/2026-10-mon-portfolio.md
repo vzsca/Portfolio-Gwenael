@@ -40,15 +40,15 @@ Travail individuel réalisé dans le cadre de la formation BTS SIO. J'ai utilis�
 
 **Affichage sur ordinateur**
 
-![Capture du portfolio sur ordinateur](../images/Capture%20d%27%C3%A9cran%202026-10-07%20142953.png)
+![Capture du portfolio sur ordinateur]({{ "/images/Capture%20d%27%C3%A9cran%202026-10-07%20142953.png" | relative_url }})
 
 **Publication GitHub Pages**
 
-![Publication GitHub Pages réussie](../images/Capture%20d%27%C3%A9cran%202026-10-07%20143029.png)
+![Publication GitHub Pages réussie]({{ "/images/Capture%20d%27%C3%A9cran%202026-10-07%20143029.png" | relative_url }})
 
 **Affichage sur mobile**
 
-![Capture du portfolio sur mobile](../images/Screenshot_20261007_143015_Chrome.jpg)
+![Capture du portfolio sur mobile]({{ "/images/Screenshot_20261007_143015_Chrome.jpg" | relative_url }})
 
 ## Ce que j'en retiens
 
