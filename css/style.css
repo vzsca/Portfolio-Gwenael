@@ -19,13 +19,10 @@ body {
   background: var(--background);
 }
 
-header, main, footer {
-  width: min(100% - 2rem, 50rem);
-  margin: 0 auto;
-}
-
 header {
-  padding: .55rem 0;
+  width: 100%;
+  margin: 0;
+  padding: .55rem 2rem;
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--border);
@@ -33,6 +30,11 @@ header {
   top: 0;
   z-index: 10;
   background: rgba(15,19,25,.96);
+}
+
+main, footer {
+  width: calc(100% - 4rem);
+  margin: 0;
 }
 
 .site {
@@ -48,7 +50,7 @@ header {
 }
 
 nav {
-  margin-left: auto;
+  margin-left: 1rem;
 }
 
 nav ul {
@@ -268,9 +270,14 @@ footer {
 
 @media (max-width: 600px) {
   header {
+    padding: .55rem 1rem;
     align-items: flex-start;
     flex-direction: column;
     gap: .35rem;
+  }
+
+  main, footer {
+    width: calc(100% - 2rem);
   }
 
   nav {
