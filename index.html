@@ -11,60 +11,72 @@ layout: default
 {% assign projets_ecole = projets | where: "type", "ecole" %}
 {% assign projets_perso = projets | where: "type", "perso" %}
 
-<h2 id="projets-ecole">Projets scolaires ({{ projets_ecole.size }})</h2>
-<p>Réalisations effectuées dans le cadre de ma formation BTS SIO.</p>
-{% for p in projets_ecole %}
-<article class="carte">
-  <h3><a href="{{ p.url | relative_url }}">École {{ forloop.index }} — {{ p.title }}</a></h3>
-  <p>{{ p.resume }}</p>
-  <p class="meta">{{ p.date | date: "%m/%Y" }} · {{ p.cadre }}</p>
-</article>
-{% endfor %}
+<details class="section-repliable">
+  <summary>Projets scolaires ({{ projets_ecole.size }})</summary>
+  <div class="section-contenu">
+    <p>Réalisations effectuées dans le cadre de ma formation BTS SIO.</p>
+    {% for p in projets_ecole %}
+    <article class="carte">
+      <h3><a href="{{ p.url | relative_url }}">École {{ forloop.index }} — {{ p.title }}</a></h3>
+      <p>{{ p.resume }}</p>
+      <p class="meta">{{ p.date | date: "%m/%Y" }} · {{ p.cadre }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</details>
 
-<h2 id="projets-perso">Projets personnels ({{ projets_perso.size }})</h2>
-<p>Projets réalisés en dehors des activités scolaires pour approfondir mes compétences.</p>
-{% for p in projets_perso %}
-<article class="carte">
-  <h3><a href="{{ p.url | relative_url }}">Perso {{ forloop.index }} — {{ p.title }}</a></h3>
-  <p>{{ p.resume }}</p>
-  <p class="meta">{{ p.date | date: "%m/%Y" }} · {{ p.cadre }}</p>
-</article>
-{% endfor %}
+<details class="section-repliable">
+  <summary>Projets personnels ({{ projets_perso.size }})</summary>
+  <div class="section-contenu">
+    <p>Projets réalisés en dehors des activités scolaires pour approfondir mes compétences.</p>
+    {% for p in projets_perso %}
+    <article class="carte">
+      <h3><a href="{{ p.url | relative_url }}">Perso {{ forloop.index }} — {{ p.title }}</a></h3>
+      <p>{{ p.resume }}</p>
+      <p class="meta">{{ p.date | date: "%m/%Y" }} · {{ p.cadre }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</details>
 
-<h2 id="competences">Compétences du bloc 1</h2>
-<div class="defile">
-<table>
-  <thead>
-    <tr>
-      <th scope="col" rowspan="2">Compétence</th>
-      {% if projets_ecole.size > 0 %}
-      <th scope="col" colspan="{{ projets_ecole.size }}">École</th>
-      {% endif %}
-      {% if projets_perso.size > 0 %}
-      <th scope="col" colspan="{{ projets_perso.size }}">Perso</th>
-      {% endif %}
-    </tr>
-    <tr>
-      {% for p in projets_ecole %}
-      <th scope="col"><a href="{{ p.url | relative_url }}">{{ forloop.index }}</a></th>
-      {% endfor %}
-      {% for p in projets_perso %}
-      <th scope="col"><a href="{{ p.url | relative_url }}">{{ forloop.index }}</a></th>
-      {% endfor %}
-    </tr>
-  </thead>
-  <tbody>
-  {% for c in site.data.competences %}
-    <tr>
-      <th scope="row">{{ c.libelle }}</th>
-      {% for p in projets_ecole %}
-      <td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : École {{ forloop.index }}">X</a>{% endif %}</td>
-      {% endfor %}
-      {% for p in projets_perso %}
-      <td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : Perso {{ forloop.index }}">X</a>{% endif %}</td>
-      {% endfor %}
-    </tr>
-  {% endfor %}
-  </tbody>
-</table>
-</div>
+<details class="section-repliable">
+  <summary>Compétences du bloc 1</summary>
+  <div class="section-contenu">
+    <div class="defile">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" rowspan="2">Compétence</th>
+            {% if projets_ecole.size > 0 %}
+            <th scope="col" colspan="{{ projets_ecole.size }}">École</th>
+            {% endif %}
+            {% if projets_perso.size > 0 %}
+            <th scope="col" colspan="{{ projets_perso.size }}">Perso</th>
+            {% endif %}
+          </tr>
+          <tr>
+            {% for p in projets_ecole %}
+            <th scope="col"><a href="{{ p.url | relative_url }}">{{ forloop.index }}</a></th>
+            {% endfor %}
+            {% for p in projets_perso %}
+            <th scope="col"><a href="{{ p.url | relative_url }}">{{ forloop.index }}</a></th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+        {% for c in site.data.competences %}
+          <tr>
+            <th scope="row">{{ c.libelle }}</th>
+            {% for p in projets_ecole %}
+            <td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : École {{ forloop.index }}">X</a>{% endif %}</td>
+            {% endfor %}
+            {% for p in projets_perso %}
+            <td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : Perso {{ forloop.index }}">X</a>{% endif %}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</details>
