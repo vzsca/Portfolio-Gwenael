@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     content.className = "section-contenu";
 
     let node = heading.nextElementSibling;
-    while (node) {
+    while (node && node.tagName !== "H2") {
       const next = node.nextElementSibling;
       content.appendChild(node);
       node = next;
