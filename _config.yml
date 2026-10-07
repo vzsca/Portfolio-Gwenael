@@ -1,13 +1,10 @@
-# Réglages du portfolio. Modifiez les quatre lignes ci-dessous, enregistrez,
-# et le site se met à jour tout seul après la publication.
-title: "Prénom Nom"
-description: "Étudiant en BTS SIO, 1re année. Mes réalisations professionnelles, au fil de la formation."
-email: "prenom.nom@ecole.fr"
-linkedin: ""
+title: "Gwenaël PLEDEL"
+description: "Étudiant en BTS SIO, 1re année, intéressé par la cybersécurité et le pentest."
+email: "gwenael.pledel@gmail.com"
+linkedin: "www.linkedin.com/in/gwenael-pledel"
 
 lang: fr
 
-# Chaque fichier déposé dans le dossier _projets devient une page du site.
 collections:
   projets:
     output: true
@@ -24,5 +21,4 @@ exclude:
   - README.md
   - LICENSE
 
-# Publier aussi les projets dont la date est postérieure au jour de la publication
 future: true
