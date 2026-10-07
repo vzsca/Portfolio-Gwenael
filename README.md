@@ -36,11 +36,11 @@ La page d'accueil classe automatiquement les réalisations en **projets scolaire
 
 ## Publication
 
-Le site est généré par Jekyll et publié par GitHub Pages. Chaque modification poussée sur la branche `main` déclenche le processus de publication configuré par GitHub Pages. citeturn0search0turn0search2
+Le site est généré par Jekyll et publié avec GitHub Pages. Les modifications poussées sur la branche `main` sont publiées selon la configuration GitHub Pages du dépôt.
 
 ## Vérifications
 
-Le portfolio est vérifié sur ordinateur et mobile. Les pages et les liens principaux doivent être contrôlés après chaque modification importante.
+Le portfolio est vérifié sur ordinateur et mobile. Les pages, les liens et le rendu doivent être contrôlés après chaque modification importante.
 
 ## Licences
 
