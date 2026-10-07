@@ -1,14 +1,14 @@
 :root {
-  --text: #e8edf4;
-  --muted: #8f9bab;
-  --accent: #82b4e8;
-  --accent-soft: rgba(130,180,232,.10);
-  --background: #0b0f14;
-  --surface: #121821;
-  --surface-2: #181f29;
-  --surface-3: #0f151d;
-  --border: #27313d;
-  --border-light: #34404e;
+  --text: #edf2f7;
+  --muted: #8d99a8;
+  --accent: #65d6c0;
+  --accent-soft: rgba(101,214,192,.10);
+  --background: #0a0f12;
+  --surface: #10181b;
+  --surface-2: #162126;
+  --surface-3: #0d1417;
+  --border: #243238;
+  --border-light: #34474e;
   --shadow: 0 12px 35px rgba(0,0,0,.18);
 }
 
@@ -24,7 +24,7 @@ body {
   color: var(--text);
   font: 14px/1.6 Arial, Helvetica, sans-serif;
   background:
-    radial-gradient(circle at 85% 0%, rgba(130,180,232,.07), transparent 28rem),
+    radial-gradient(circle at 85% 0%, rgba(101,214,192,.055), transparent 28rem),
     var(--background);
 }
 
@@ -39,7 +39,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(11,15,20,.90);
+  background: rgba(10,15,18,.90);
   backdrop-filter: blur(12px);
 }
 
@@ -118,7 +118,7 @@ h1::after {
   height: 2px;
   margin-top: .55rem;
   background: var(--accent);
-  box-shadow: 0 0 14px rgba(130,180,232,.35);
+  box-shadow: 0 0 14px rgba(101,214,192,.28);
 }
 
 h2 {
@@ -133,6 +133,25 @@ h2 {
 h3 {
   font-size: .94rem;
   margin: 0 0 .25rem;
+}
+
+#projets > h2 { margin-top: 1.7rem; }
+
+.comp-liste {
+  color: var(--muted);
+  font-size: .82rem;
+  margin: 0 0 1rem;
+}
+
+.comp {
+  display: inline-block;
+  margin: .15rem .25rem .15rem 0;
+  padding: .2rem .45rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--accent-strong, var(--accent));
+  background: var(--accent-soft);
+  font-size: .74rem;
 }
 
 a {
