@@ -30,6 +30,21 @@ Travail individuel réalisé dans le cadre de la formation BTS SIO. J'ai utilis�
 - La page de profil et les informations de contact.
 - Les mentions légales.
 - Les contrôles W3C et Lighthouse.
+- Les captures de vérification du site et de sa publication.
+
+### Captures
+
+**Affichage sur ordinateur**
+
+![Capture du portfolio sur ordinateur](../images/Capture%20d%27%C3%A9cran%202026-10-07%20142953.png)
+
+**Publication GitHub Pages**
+
+![Publication GitHub Pages réussie](../images/Capture%20d%27%C3%A9cran%202026-10-07%20143029.png)
+
+**Affichage sur mobile**
+
+![Capture du portfolio sur mobile](../images/Screenshot_20261007_143015_Chrome.jpg)
 
 ## Ce que j'en retiens
 
