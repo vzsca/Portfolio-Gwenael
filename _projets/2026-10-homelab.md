@@ -4,7 +4,7 @@ date: 2026-10-07
 cadre: "Projet personnel"
 type: "perso"
 resume: "Mise en place d'un serveur Debian personnel pour héberger des fichiers, des services et des outils accessibles à distance."
-competences: []
+competences: [c1, c5]
 ---
 
 ## Contexte
