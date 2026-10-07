@@ -17,19 +17,22 @@ Travail individuel réalisé dans le cadre de la formation BTS SIO. J'ai utilis�
 
 ## Description de l'activité
 
-1. Création du dépôt à partir du modèle (bouton « Use this template »).
-2. Réglage de l'identité du site dans le fichier `_config.yml`.
-3. Personnalisation de la page d'accueil et du profil.
-4. Activation de GitHub Pages sur la branche `main`.
-5. Rédaction des mentions légales : éditeur, hébergeur, absence de collecte de données.
-6. Vérification sur ordinateur et sur téléphone, puis contrôle de l'accessibilité.
+1. J'ai créé mon dépôt à partir du modèle de portfolio BTS SIO.
+2. J'ai renseigné mon identité, ma présentation et mes informations de contact dans `_config.yml`.
+3. J'ai personnalisé la page d'accueil afin de présenter mon profil et mes réalisations.
+4. J'ai activé GitHub Pages sur la branche `main` et vérifié la publication du site.
+5. J'ai créé les mentions légales avec l'identification de l'éditeur et de l'hébergeur.
+6. J'ai ajouté une organisation automatique des projets scolaires et personnels ainsi qu'un tableau des compétences.
+7. J'ai vérifié le rendu sur ordinateur et téléphone, puis contrôlé le site avec W3C Validator et Lighthouse.
 
 ## Productions et preuves
 
 - L'adresse publique du site.
-- Le dépôt et son historique des modifications.
+- Le dépôt GitHub et son historique des modifications.
 - La page de profil et les informations de contact.
 - Les mentions légales.
+- Le système de classement des projets scolaires et personnels.
+- Le tableau des compétences.
 - Les contrôles W3C et Lighthouse.
 - Les captures de vérification du site et de sa publication.
 
@@ -49,4 +52,6 @@ Travail individuel réalisé dans le cadre de la formation BTS SIO. J'ai utilis�
 
 ## Ce que j'en retiens
 
-La mise en ligne du portfolio m'a permis de comprendre le fonctionnement d'un site statique avec Jekyll et GitHub Pages. J'ai également appris à organiser mes réalisations et à les associer aux compétences du BTS SIO afin de pouvoir suivre mon évolution pendant la formation.
+La mise en ligne du portfolio m'a permis de comprendre le fonctionnement d'un site statique avec Jekyll et GitHub Pages. J'ai également appris à organiser mes réalisations et à les associer aux compétences du BTS SIO afin de suivre mon évolution pendant la formation.
+
+La réalisation valide les compétences **C3 — Développer la présence en ligne de l'organisation**, grâce à la création, la publication et au contrôle du site, et **C6 — Organiser son développement professionnel**, grâce à la présentation de mes réalisations et au suivi de mes compétences dans le portfolio.
