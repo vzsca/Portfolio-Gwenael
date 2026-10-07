@@ -1,18 +1,54 @@
-# Modèle de portfolio BTS SIO
+# Portfolio BTS SIO — Gwenaël PLEDEL
 
-Site statique gratuit, construit avec Jekyll (logiciel libre) et publié par GitHub Pages. Aucune installation n'est nécessaire : tout se fait depuis le navigateur.
+Portfolio professionnel réalisé dans le cadre du BTS SIO et publié gratuitement avec **Jekyll + GitHub Pages**.
 
-## Démarrer
+🌐 **Site public :** https://vzsca.github.io/Portfolio-Gwenael/
 
-1. Bouton vert « Use this template », puis « Create a new repository ».
-2. Dans `_config.yml`, remplacez le nom, la phrase de présentation et l'adresse e-mail.
-3. Settings, Pages, Source « Deploy from a branch », branche `main`, dossier `/ (root)`, Save.
+## À propos
 
-## Ajouter un projet
+Ce portfolio présente mes réalisations scolaires et personnelles, ainsi que les compétences du bloc 1 du BTS SIO auxquelles elles sont associées.
 
-1. Ouvrez le dossier `_projets`, puis le fichier `_A-COPIER.md`, et copiez tout son contenu.
-2. Revenez dans `_projets`, « Add file », « Create new file », nommez le fichier par exemple `wireshark.md`, collez, remplissez.
-3. Les captures se déposent dans `images` (« Add file », « Upload files »).
-4. « Commit changes ». La page d'accueil et le tableau des compétences se mettent à jour seuls.
+Je m'intéresse particulièrement à la **cybersécurité**, au **pentest** et à l'administration des systèmes et réseaux.
 
-Code sous licence MIT, contenu sous licence CC BY 4.0.
+## Structure
+
+- `index.html` — page d'accueil et tableau des compétences
+- `_projets/` — fiches de réalisations
+- `_layouts/` — mises en page Jekyll
+- `_data/competences.yml` — référentiel des six compétences
+- `css/style.css` — styles du portfolio
+- `images/` — captures utilisées dans les fiches
+- `mentions-legales.md` — mentions légales
+- `_config.yml` — configuration Jekyll
+- `LICENSE` — licence du code
+
+## Ajouter une réalisation
+
+1. Ouvrir `_projets/_A-COPIER.md`.
+2. Copier son contenu dans un nouveau fichier dans `_projets/`.
+3. Utiliser un nom au format `AAAA-MM-sujet.md`, en minuscules, avec des tirets.
+4. Renseigner le contexte, les moyens, les étapes, les preuves et ce que j'en retiens.
+5. Ajouter les captures nécessaires dans `images/` avec un texte alternatif pertinent.
+6. Associer uniquement les compétences réellement démontrées par la réalisation.
+7. Faire un commit puis vérifier le déploiement GitHub Pages.
+
+La page d'accueil classe automatiquement les réalisations en **projets scolaires** et **projets personnels** et met à jour le tableau des compétences.
+
+## Publication
+
+Le site est généré par Jekyll et publié par GitHub Pages. Chaque modification poussée sur la branche `main` déclenche le processus de publication configuré par GitHub Pages. citeturn0search0turn0search2
+
+## Vérifications
+
+Le portfolio est vérifié sur ordinateur et mobile. Les pages et les liens principaux doivent être contrôlés après chaque modification importante.
+
+## Licences
+
+- **Code HTML/CSS et éléments techniques du site :** licence MIT.
+- **Contenu éditorial et captures personnelles :** licence CC BY 4.0, lorsque cette licence est indiquée sur le site.
+
+Voir `LICENSE` et les [mentions légales](https://vzsca.github.io/Portfolio-Gwenael/mentions-legales/).
+
+## Auteur
+
+**Gwenaël PLEDEL** — étudiant en première année de BTS SIO.
