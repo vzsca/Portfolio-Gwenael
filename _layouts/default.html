@@ -1,30 +1,58 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang }}">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ page.resume | default: site.description }}">
-  <link rel="stylesheet" href="{{ '/css/style.css?v=4' | relative_url }}">
+  <meta name="theme-color" content="#080d0a">
+  <title>{% if page.title and page.title != "Accueil" %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.resume | default: site.description | escape }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/css/style.css?v=5' | relative_url }}">
 </head>
 <body>
   <header>
-    <p class="site"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
-    <nav aria-label="Menu principal">
-      <ul>
-        <li><a href="{{ '/' | relative_url }}#projets">Projets</a></li>
-        <li><a href="{{ '/' | relative_url }}#competences">Compétences</a></li>
-        <li><a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a></li>
-      </ul>
-    </nav>
+    <div class="wrap header-inner">
+      <a class="brand" href="{{ '/' | relative_url }}">~/gwenael</a>
+      <nav aria-label="Navigation principale">
+        <a href="{{ '/' | relative_url }}#top">accueil</a>
+        <a href="{{ '/' | relative_url }}#projets">projets</a>
+        <a href="{{ '/' | relative_url }}#competences">compétences</a>
+        <a href="{{ '/mentions-legales/' | relative_url }}">mentions légales</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-{{ content }}
-  </main>
+  {{ content }}
 
   <footer>
-    <p>{% if site.email != "" %}<a href="mailto:{{ site.email }}">{{ site.email }}</a> · {% endif %}{% if site.linkedin != "" %}<a href="{{ site.linkedin }}">LinkedIn</a> · {% endif %}contenu sous licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a> · <a href="{{ '/mentions-legales/' | relative_url }}">mentions légales</a></p>
+    <div class="wrap footer-inner">
+      <p>© {{ site.time | date: "%Y" }} {{ site.title }} — contenu sous licence <a class="hl" href="https://creativecommons.org/licenses/by/4.0/deed.fr" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></p>
+      <nav aria-label="Navigation de pied de page">
+        <a href="{{ '/' | relative_url }}#projets">projets</a>
+        <a href="{{ '/' | relative_url }}#competences">compétences</a>
+        <a href="{{ '/mentions-legales/' | relative_url }}">mentions légales</a>
+        <a class="hl" href="https://github.com/vzsca" target="_blank" rel="noopener noreferrer">github ↗</a>
+      </nav>
+    </div>
   </footer>
+  <script>
+    (function () {
+      var links = document.querySelectorAll('header nav a[href*="#"]');
+      if (!('IntersectionObserver' in window)) return;
+      var sections = ['top', 'projets', 'competences'].map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          links.forEach(function (link) {
+            var target = new URL(link.href, window.location.href).hash;
+            link.classList.toggle('active', target === '#' + entry.target.id);
+          });
+        });
+      }, { rootMargin: '-35% 0px -55% 0px' });
+      sections.forEach(function (section) { observer.observe(section); });
+    })();
+  </script>
 </body>
 </html>
