@@ -5,26 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.resume | default: site.description }}">
-  <link rel="stylesheet" href="{{ '/css/style.css?v=4' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/style.css?v=6' | relative_url }}">
 </head>
 <body>
   <header>
-    <p class="site"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
+    <p class="site"><a href="{{ '/' | relative_url }}">~/{{ site.title | slugify }}</a></p>
     <nav aria-label="Menu principal">
       <ul>
-        <li><a href="{{ '/' | relative_url }}#projets">Projets</a></li>
-        <li><a href="{{ '/' | relative_url }}#competences">Compétences</a></li>
-        <li><a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a></li>
+        <li><a href="{{ '/' | relative_url }}"><span class="nav-prompt">$</span> home</a></li>
+        <li><a href="{{ '/' | relative_url }}#projets">projects</a></li>
+        <li><a href="{{ '/' | relative_url }}#competences">skills</a></li>
+        <li><a href="{{ '/mentions-legales/' | relative_url }}">legal</a></li>
       </ul>
     </nav>
   </header>
-
   <main>
 {{ content }}
   </main>
-
   <footer>
-    <p>{% if site.email != "" %}<a href="mailto:{{ site.email }}">{{ site.email }}</a> · {% endif %}{% if site.linkedin != "" %}<a href="{{ site.linkedin }}">LinkedIn</a> · {% endif %}contenu sous licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a> · <a href="{{ '/mentions-legales/' | relative_url }}">mentions légales</a></p>
+    <p>© {{ site.time | date: "%Y" }} {{ site.title }} — construit avec du code.</p>
+    <p>{% if site.email != "" %}<a href="mailto:{{ site.email }}">contact</a> · {% endif %}contenu sous licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a> · <a href="{{ '/mentions-legales/' | relative_url }}">mentions légales</a></p>
   </footer>
 </body>
 </html>
