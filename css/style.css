@@ -134,7 +134,6 @@ footer a.hl { color: var(--green); border-bottom: 1px solid var(--green); }
 .legal-back { width: 100%; max-width: 872px; margin: 24px auto 0; padding: 0 20px; font-size: 13px; }
 .legal-back a { color: var(--green); }
 @media (max-width: 640px) {
-  main > article { padding: 20px 18px 0; }
   #mentions-legales + .legal-terminal-section { width: calc(100% - 36px); margin-top: 64px; }
   .legal-terminal { width: 100%; margin-top: 0; }
   .legal-grid { padding: 8px 14px; }
