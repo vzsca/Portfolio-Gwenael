@@ -130,7 +130,7 @@ main > article img { display: block; max-width: 100%; height: auto; border: 1px 
 .sous-titre { color: var(--muted); font-size: 13px; }
 .comp-liste { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 18px 0; }
 .comp { display: inline-block; border: 1px solid var(--line); background: var(--panel); color: var(--green); padding: 4px 8px; border-radius: 3px; font-size: 12px; }
-.legal-page-heading { width: 100%; max-width: 872px; margin: 30px auto 0; padding: 0 20px; }
+.legal-page-heading { width: calc(100% - 40px); max-width: 832px; margin: 52px auto 0; padding: 0; }
 .legal-page-heading h1 { font: 700 clamp(31px, 4vw, 43px)/1.2 var(--display); letter-spacing: -.025em; margin: 12px 0; }
 .legal-page-heading > p:last-child { color: var(--muted); font-size: 14.5px; line-height: 1.85; margin: 0; }
 .legal-terminal { width: calc(100% - 40px); max-width: 832px; margin: 26px auto 0; box-shadow: 0 16px 40px rgba(0,0,0,.18); }
