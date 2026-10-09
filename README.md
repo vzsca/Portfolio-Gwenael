@@ -65,13 +65,13 @@ Le site est publié via GitHub Pages à partir de la branche `main`. Jekyll gén
 
 Après une modification importante, vérifier notamment :
 
-- le chargement du CSS et des polices ;
+- le chargement du CSS et l'affichage des polices système ;
 - la navigation et les liens entre les pages ;
 - l'affichage des fiches projets et des mentions légales ;
 - la lisibilité sur ordinateur et téléphone ;
 - le statut du déploiement GitHub Pages.
 
-La feuille de style utilise un paramètre de version dans le layout pour faciliter le rafraîchissement du cache après une modification visuelle.
+La feuille de style utilise un paramètre de version dans le layout pour faciliter le rafraîchissement du cache après une modification visuelle. Les polices reposent sur les polices système : le site ne contacte pas Google Fonts.
 
 ## Licences
 
