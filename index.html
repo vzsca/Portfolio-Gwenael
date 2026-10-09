@@ -34,7 +34,13 @@ title: Accueil
   {% assign projets_perso = projets | where: "type", "perso" %}
 
   <div class="wrap">
-    <section id="projets">
+<section id="profil" class="profil">
+      <h2><span class="sym">~/</span>profil</h2>
+      <p>Je suis <strong>Gwenaël PLEDEL</strong>, étudiant en première année de BTS SIO. Je m'intéresse particulièrement à la <strong>cybersécurité</strong>, avec un objectif orienté vers le <strong>pentest</strong> et la sécurité offensive.</p>
+      <p>Au fil de ma formation et de mes projets personnels, je développe mes compétences en développement, systèmes, réseaux et administration. Ce portfolio rassemble mes réalisations et montre comment mes compétences évoluent.</p>
+    </section>
+
+<section id="projets">
       <h2><span class="sym">$</span>ls ~/projets</h2>
 
       <p class="group-label"><b>[ scolaires ]</b> — réalisations effectuées dans le cadre du BTS SIO ({{ projets_ecole.size }})</p>
@@ -74,12 +80,6 @@ title: Accueil
       </div>
     </section>
 
-    <section id="profil" class="profil">
-      <h2><span class="sym">~/</span>profil</h2>
-      <p>Je suis <strong>Gwenaël PLEDEL</strong>, étudiant en première année de BTS SIO. Je m'intéresse particulièrement à la <strong>cybersécurité</strong>, avec un objectif orienté vers le <strong>pentest</strong> et la sécurité offensive.</p>
-      <p>Au fil de ma formation et de mes projets personnels, je développe mes compétences en développement, systèmes, réseaux et administration. Ce portfolio rassemble mes réalisations et montre comment mes compétences évoluent.</p>
-    </section>
-
     <section id="competences">
       <h2><span class="sym">$</span>cat competences-bloc1.md</h2>
       <div class="scroll">
@@ -114,7 +114,7 @@ title: Accueil
     </section>
 
     <section id="contact">
-      <h2><span class="sym">$</span>mail -s</h2>
+      <h2><span class="sym">$</span>contact</h2>
       <p class="contact-intro">Une question sur un projet, une idée de collaboration ou une opportunité de stage ? N'hésitez pas à me contacter.</p>
       <div class="contact-list">
         {% if site.email != "" %}
