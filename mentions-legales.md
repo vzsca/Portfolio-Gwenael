@@ -42,8 +42,8 @@ permalink: /mentions-legales/
         <h2>Données personnelles et vie privée</h2>
         <p>Ce site n'intègre aucun formulaire, outil de mesure d'audience, publicité ou outil de suivi ajouté par l'éditeur. Il ne charge pas de police ni de script depuis Google Fonts ou un autre service tiers.</p>
         <p>GitHub Pages, en tant qu'hébergeur, peut enregistrer l'adresse IP et d'autres données techniques de consultation à des fins de sécurité et de fonctionnement du service. Ce traitement relève de GitHub ; consultez sa <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">politique de confidentialité</a>.</p>
-        <p>Si vous contactez l'éditeur par e-mail, les informations de votre message sont utilisées pour lire et traiter votre demande. Elles sont transmises par les services de messagerie utilisés par l'expéditeur et le destinataire ; elles ne sont pas enregistrées dans une base de données par ce site.</p>
-        <p>Pour toute question relative à un message envoyé à l'éditeur ou pour demander sa suppression, contactez l'adresse e-mail indiquée dans la rubrique « Éditeur du site ».</p>
+        <p>Pour les messages reçus par e-mail, l'éditeur est responsable du traitement des informations fournies volontairement dans le message. Elles sont utilisées uniquement pour répondre et assurer le suivi de la demande. La base légale est l'intérêt légitime de traiter les sollicitations reçues. Les messages sont gérés dans la messagerie de l'éditeur et ne sont pas enregistrés dans une base de données par ce site.</p>
+        <p>Pour exercer les droits applicables à ces échanges (accès, rectification, effacement ou limitation du traitement, et opposition lorsque celle-ci est applicable), contactez l'adresse e-mail indiquée dans la rubrique « Éditeur du site ». Vous pouvez également adresser une réclamation à la <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener noreferrer">CNIL</a>.</p>
       </article>
 
       <article class="legal-card">
