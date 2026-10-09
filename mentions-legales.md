@@ -4,17 +4,11 @@ title: Mentions légales
 permalink: /mentions-legales/
 ---
 
-<div class="term legal-heading">
-  <div class="term-bar">
-    <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-    <span class="term-title">~/mentions-legales</span>
-  </div>
-  <div class="term-body profil">
-    <p class="prompt">~/mentions-legales</p>
-    <h1>Mentions légales</h1>
-    <p>Informations relatives à l'éditeur, à l'hébergement et à l'utilisation de ce portfolio.</p>
-  </div>
-</div>
+<header class="legal-page-heading">
+  <p class="prompt">~/mentions-legales</p>
+  <h1>Mentions légales</h1>
+  <p>Informations relatives à l'éditeur, à l'hébergement et à l'utilisation de ce portfolio.</p>
+</header>
 
 <div class="term legal-terminal">
   <div class="term-bar">
@@ -23,7 +17,6 @@ permalink: /mentions-legales/
   </div>
   <section class="legal-grid">
   <article class="legal-card">
-    <span class="legal-label">01</span>
     <h2>Éditeur du site</h2>
     <p><strong>{{ site.title }}</strong></p>
     <p>Étudiant en BTS SIO. Site personnel, sans but commercial.</p>
@@ -31,7 +24,6 @@ permalink: /mentions-legales/
   </article>
 
   <article class="legal-card">
-    <span class="legal-label">02</span>
     <h2>Hébergement</h2>
     <p><strong>GitHub Inc.</strong></p>
     <p>88 Colin P. Kelly Jr. Street<br>
@@ -41,14 +33,12 @@ permalink: /mentions-legales/
   </article>
 
   <article class="legal-card">
-    <span class="legal-label">03</span>
     <h2>Données personnelles</h2>
     <p>Ce site ne dépose aucun cookie, ne contient aucun formulaire et ne mesure pas l'audience.</p>
     <p>Aucune donnée n'est collectée sur les visiteurs.</p>
   </article>
 
   <article class="legal-card">
-    <span class="legal-label">04</span>
     <h2>Licences</h2>
     <p>Les textes et les captures sont publiés sous licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a>.</p>
     <p>Le code HTML et CSS est publié sous licence MIT, conformément au fichier <code>LICENSE</code> du dépôt.</p>
