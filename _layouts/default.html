@@ -19,7 +19,7 @@
         <a href="{{ '/' | relative_url }}#top">accueil</a>
         <a href="{{ '/' | relative_url }}#projets">projets</a>
         <a href="{{ '/' | relative_url }}#competences">compétences</a>
-        <a href="{{ '/mentions-legales/' | relative_url }}">mentions légales</a>
+        <a class="{% if page.url == '/mentions-legales/' %}active{% endif %}" href="{{ '/mentions-legales/' | relative_url }}">mentions légales</a>
       </nav>
     </div>
   </header>
