@@ -16,7 +16,7 @@ Le site utilise un thème sombre inspiré des terminaux Linux et des éditeurs d
 
 - arrière-plan très sombre, panneaux discrets et accents verts ;
 - fenêtres de type terminal avec barre supérieure et trois pastilles ;
-- typographies **JetBrains Mono** et **Space Grotesk** ;
+- typographie monospace et sans-serif basée sur les polices système ;
 - interface sobre, sans éléments décoratifs superflus ;
 - navigation commune entre l'accueil, les fiches projets et les mentions légales ;
 - mise en page responsive pour les écrans d'ordinateur et de téléphone ;
@@ -71,7 +71,7 @@ Après une modification importante, vérifier notamment :
 - la lisibilité sur ordinateur et téléphone ;
 - le statut du déploiement GitHub Pages.
 
-La feuille de style utilise un paramètre de version dans le layout pour faciliter le rafraîchissement du cache après une modification visuelle. Les polices reposent sur les polices système : le site ne contacte pas Google Fonts.
+La feuille de style utilise un paramètre de version dans le layout pour faciliter le rafraîchissement du cache après une modification visuelle. Les polices reposent sur les polices système : le site ne contacte pas Google Fonts. Les polices reposent sur les polices système : le site ne contacte pas Google Fonts.
 
 ## Licences
 
