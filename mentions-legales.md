@@ -5,7 +5,7 @@ permalink: /mentions-legales/
 ---
 
 <div class="legal-page-heading profil">
-  <p class="prompt">~/mentions-legales</p>
+  <p class="prompt">~/mention legal</p>
   <h1>Mentions légales</h1>
   <p>Informations relatives à l'éditeur, à l'hébergement et à l'utilisation de ce portfolio.</p>
 </div>
@@ -13,8 +13,9 @@ permalink: /mentions-legales/
 <div class="term legal-terminal">
   <div class="term-bar">
     <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-    <span class="term-title">~/portfolio/mentions-legales.md</span>
+    <span class="term-title">~/mention legal</span>
   </div>
+  <div class="term-body legal-command"><p class="prompt">ls ~/mention legal</p></div>
   <section class="legal-grid">
   <article class="legal-card">
     <h2>Éditeur du site</h2>
