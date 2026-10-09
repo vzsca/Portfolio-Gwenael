@@ -14,7 +14,7 @@ permalink: /mentions-legales/
     <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
     <span class="term-title">~/mention legal</span>
   </div>
-  <div class="term-body legal-command"><p class="prompt">ls ~/mention legal</p></div>
+  <div class="term-body legal-command"><h2 class="prompt">ls ~/mention legal</h2></div>
   <section class="legal-grid">
   <article class="legal-card">
     <h2>Éditeur du site</h2>
