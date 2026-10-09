@@ -1,84 +1,139 @@
 ---
 layout: default
+title: Accueil
 ---
-<h1>{{ site.title }}</h1>
-<p class="sous-titre">{{ site.description }}</p>
+<main id="top">
+  <div class="wrap hero">
+    <section class="term hero-term" aria-labelledby="intro-title">
+      <div class="term-bar" aria-hidden="true">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="term-title">~/gwenael — zsh — 80x24</span>
+      </div>
+      <div class="term-body">
+        <p class="prompt">whoami</p>
+        <h1 id="intro-title">Gwenaël PLEDEL</h1>
+        <p class="tagline">Étudiant en première année de BTS SIO, intéressé par la cybersécurité, le pentest, les systèmes et les réseaux. J'aime apprendre en construisant mes propres projets et outils.</p>
 
-<h2>Profil</h2>
-<p>Je suis Gwenaël PLEDEL, étudiant en première année de BTS SIO. Je m'intéresse particulièrement à la cybersécurité, avec un objectif orienté vers le pentest et la sécurité offensive. Au cours de ma formation, je développe mes compétences en développement, systèmes, réseaux et outils informatiques à travers différents projets. Ce portfolio me permet de présenter mes réalisations scolaires et personnelles et de suivre l'évolution de mes compétences.</p>
-
-{% assign projets = site.projets | sort: "date" | reverse %}
-{% assign projets_ecole = projets | where: "type", "ecole" %}
-{% assign projets_perso = projets | where: "type", "perso" %}
-
-<section id="projets">
-  <h2>Projets</h2>
-
-  <details class="section-repliable">
-    <summary>Projets scolaires ({{ projets_ecole.size }})</summary>
-    <div class="section-contenu">
-      <p>Réalisations effectuées dans le cadre de ma formation BTS SIO.</p>
-      {% for p in projets_ecole %}
-      <article class="carte">
-        <h3><a href="{{ p.url | relative_url }}">École {{ forloop.index }} — {{ p.title }}</a></h3>
-        <p>{{ p.resume }}</p>
-        <p class="meta">{{ p.date | date: "%m/%Y" }} · {{ p.cadre }}</p>
-      </article>
-      {% endfor %}
-    </div>
-  </details>
-
-  <details class="section-repliable">
-    <summary>Projets personnels ({{ projets_perso.size }})</summary>
-    <div class="section-contenu">
-      <p>Projets réalisés en dehors des activités scolaires pour approfondir mes compétences.</p>
-      {% for p in projets_perso %}
-      <article class="carte">
-        <h3><a href="{{ p.url | relative_url }}">Perso {{ forloop.index }} — {{ p.title }}</a></h3>
-        <p>{{ p.resume }}</p>
-        <p class="meta">{{ p.date | date: "%m/%Y" }} · {{ p.cadre }}</p>
-      </article>
-      {% endfor %}
-    </div>
-  </details>
-</section>
-
-<section id="competences">
-  <h2>Compétences du bloc 1</h2>
-  <div class="defile">
-      <table>
-        <thead>
-          <tr>
-            <th scope="col" rowspan="2">Compétence</th>
-            {% if projets_ecole.size > 0 %}
-            <th scope="col" colspan="{{ projets_ecole.size }}">École</th>
-            {% endif %}
-            {% if projets_perso.size > 0 %}
-            <th scope="col" colspan="{{ projets_perso.size }}">Perso</th>
-            {% endif %}
-          </tr>
-          <tr>
-            {% for p in projets_ecole %}
-            <th scope="col"><a href="{{ p.url | relative_url }}">{{ forloop.index }}</a></th>
-            {% endfor %}
-            {% for p in projets_perso %}
-            <th scope="col"><a href="{{ p.url | relative_url }}">{{ forloop.index }}</a></th>
-            {% endfor %}
-          </tr>
-        </thead>
-        <tbody>
-        {% for c in site.data.competences %}
-          <tr>
-            <th scope="row">{{ c.libelle }}</th>
-            {% for p in projets_ecole %}
-            <td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : École {{ forloop.index }}">X</a>{% endif %}</td>
-            {% endfor %}
-            {% for p in projets_perso %}
-            <td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : Perso {{ forloop.index }}">X</a>{% endif %}</td>
-            {% endfor %}
-          </tr>
-        {% endfor %}
-        </tbody>
-      </table>
+        <div class="block">
+          <p class="prompt">cat status.txt</p>
+          <p class="out" id="status">Actuellement en première année de BTS SIO — objectif : pentest.</p>
+        </div>
+        <div class="block">
+          <p class="prompt">open <span class="cursor" aria-hidden="true"></span></p>
+        </div>
+        <div class="btns">
+          <a class="btn solid" href="#projets">voir les projets</a>
+          <a class="btn" href="#contact">me contacter</a>
+        </div>
+      </div>
+    </section>
   </div>
-</section>
+
+  {% assign projets = site.projets | sort: "date" | reverse %}
+  {% assign projets_ecole = projets | where: "type", "ecole" %}
+  {% assign projets_perso = projets | where: "type", "perso" %}
+
+  <div class="wrap">
+    <section id="projets">
+      <h2><span class="sym">$</span>ls ~/projets</h2>
+
+      <p class="group-label"><b>[ scolaires ]</b> — réalisations effectuées dans le cadre du BTS SIO ({{ projets_ecole.size }})</p>
+      <div class="term project-terminal">
+        <div class="term-bar" aria-hidden="true"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">~/projets/ecole</span></div>
+        <div class="term-body projects">
+          {% for p in projets_ecole %}
+          <a class="proj" href="{{ p.url | relative_url }}">
+            <span class="date">{{ p.date | date: "%m/%Y" }}</span>
+            <span class="project-main">
+              <span class="name">{{ p.title }}</span>
+              <span class="desc">{{ p.resume }}</span>
+            </span>
+            <span class="tag">[ atelier pro ]</span>
+          </a>
+          {% endfor %}
+          {% if projets_ecole.size == 0 %}<p class="empty">Aucun projet scolaire publié pour le moment.</p>{% endif %}
+        </div>
+      </div>
+
+      <p class="group-label"><b>[ personnels ]</b> — projets menés hors cursus pour approfondir mes compétences ({{ projets_perso.size }})</p>
+      <div class="term project-terminal">
+        <div class="term-bar" aria-hidden="true"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">~/projets/perso</span></div>
+        <div class="term-body projects">
+          {% for p in projets_perso %}
+          <a class="proj" href="{{ p.url | relative_url }}">
+            <span class="date">{{ p.date | date: "%m/%Y" }}</span>
+            <span class="project-main">
+              <span class="name">{{ p.title }}</span>
+              <span class="desc">{{ p.resume }}</span>
+            </span>
+            <span class="tag green">[ perso ]</span>
+          </a>
+          {% endfor %}
+          {% if projets_perso.size == 0 %}<p class="empty">Aucun projet personnel publié pour le moment.</p>{% endif %}
+        </div>
+      </div>
+    </section>
+
+    <section id="profil" class="profil">
+      <h2><span class="sym">~/</span>profil</h2>
+      <p>Je suis <strong>Gwenaël PLEDEL</strong>, étudiant en première année de BTS SIO. Je m'intéresse particulièrement à la <strong>cybersécurité</strong>, avec un objectif orienté vers le <strong>pentest</strong> et la sécurité offensive.</p>
+      <p>Au fil de ma formation et de mes projets personnels, je développe mes compétences en développement, systèmes, réseaux et administration. Ce portfolio rassemble mes réalisations et montre comment mes compétences évoluent.</p>
+    </section>
+
+    <section id="competences">
+      <h2><span class="sym">$</span>cat competences-bloc1.md</h2>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">[ compétence ]</th>
+              {% if projets_ecole.size > 0 %}<th class="grp" colspan="{{ projets_ecole.size }}">[ école ]</th>{% endif %}
+              {% if projets_perso.size > 0 %}<th class="grp" colspan="{{ projets_perso.size }}">[ perso ]</th>{% endif %}
+            </tr>
+            <tr>
+              {% for p in projets_ecole %}<th class="c col-sep"><a href="{{ p.url | relative_url }}" aria-label="Ouvrir le projet scolaire : {{ p.title }}">{{ forloop.index }}</a></th>{% endfor %}
+              {% for p in projets_perso %}<th class="c col-sep"><a href="{{ p.url | relative_url }}" aria-label="Ouvrir le projet personnel : {{ p.title }}">{{ forloop.index }}</a></th>{% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+          {% for c in site.data.competences %}
+            <tr>
+              <td class="skill">{{ c.libelle }}</td>
+              {% for p in projets_ecole %}
+              <td class="c">{% if p.competences contains c.code %}<a class="chk" href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} — projet scolaire : {{ p.title }}">×</a>{% endif %}</td>
+              {% endfor %}
+              {% for p in projets_perso %}
+              <td class="c">{% if p.competences contains c.code %}<a class="chk" href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} — projet personnel : {{ p.title }}">×</a>{% endif %}</td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <p class="note"># cliquer sur une case ouvre le projet correspondant</p>
+    </section>
+
+    <section id="contact">
+      <h2><span class="sym">$</span>mail -s</h2>
+      <p class="contact-intro">Une question sur un projet, une idée de collaboration ou une opportunité de stage ? N'hésitez pas à me contacter.</p>
+      <div class="contact-list">
+        {% if site.email != "" %}
+        <a class="cell" href="mailto:{{ site.email }}">
+          <span class="k">[ e-mail ]</span>
+          <span class="v">{{ site.email }}</span>
+        </a>
+        {% endif %}
+        {% if site.linkedin != "" %}
+        <a class="cell" href="{{ site.linkedin }}" target="_blank" rel="noopener noreferrer">
+          <span class="k">[ linkedin ]</span>
+          <span class="v">Profil LinkedIn ↗</span>
+        </a>
+        {% endif %}
+        <a class="cell" href="https://github.com/vzsca" target="_blank" rel="noopener noreferrer">
+          <span class="k">[ github ]</span>
+          <span class="v">github.com/vzsca ↗</span>
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
