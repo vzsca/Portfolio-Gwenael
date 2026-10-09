@@ -4,11 +4,11 @@ title: Mentions légales
 permalink: /mentions-legales/
 ---
 
-<header class="legal-page-heading">
+<div class="legal-page-heading profil">
   <p class="prompt">~/mentions-legales</p>
   <h1>Mentions légales</h1>
   <p>Informations relatives à l'éditeur, à l'hébergement et à l'utilisation de ce portfolio.</p>
-</header>
+</div>
 
 <div class="term legal-terminal">
   <div class="term-bar">
