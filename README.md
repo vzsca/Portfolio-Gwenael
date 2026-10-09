@@ -61,7 +61,7 @@ La page d'accueil trie les fiches à partir de leur champ `type` (`ecole` ou `pe
 
 ## Publication et maintenance
 
-Le site est publié via GitHub Pages à partir de la branche `main). Jekyll génère les pages à partir des fichiers Markdown, des layouts et des données du dépôt.
+Le site est publié via GitHub Pages à partir de la branche `main`. Jekyll génère les pages à partir des fichiers Markdown, des layouts et des données du dépôt.
 
 Après une modification importante, vérifier notamment :
 
@@ -75,8 +75,8 @@ La feuille de style utilise un paramètre de version dans le layout pour facilit
 
 ## Licences
 
-- **Code HTML/CSS et éléments techniques :** licence MIT.
-- **Contenu éditorial et captures personnelles :** licence CC BY 4.0 lorsque cette licence est indiquée sur le site.
+- **Code HTML/CSS et éléments techniques :** licence MIT, selon le fichier `LICENSE`.
+- **Textes et captures personnelles du portfolio :** licence CC BY 4.0, sauf mention contraire.
 
 Consulter le fichier `LICENSE` et les [mentions légales](https://vzsca.github.io/Portfolio-Gwenael/mentions-legales/).
 
