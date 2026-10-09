@@ -1,84 +1,113 @@
 ---
 layout: default
 ---
-<h1>{{ site.title }}</h1>
-<p class="sous-titre">{{ site.description }}</p>
-
-<h2>Profil</h2>
-<p>Je suis Gwenaël PLEDEL, étudiant en première année de BTS SIO. Je m'intéresse particulièrement à la cybersécurité, avec un objectif orienté vers le pentest et la sécurité offensive. Au cours de ma formation, je développe mes compétences en développement, systèmes, réseaux et outils informatiques à travers différents projets. Ce portfolio me permet de présenter mes réalisations scolaires et personnelles et de suivre l'évolution de mes compétences.</p>
+<section class="hero terminal-window" aria-labelledby="intro-title">
+  <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span><span class="terminal-path">~/portfolio — zsh</span></div>
+  <div class="terminal-body">
+    <p class="command"><span>$</span> whoami</p>
+    <h1 id="intro-title">{{ site.title }}</h1>
+    <p class="hero-description">{{ site.description }}</p>
+    <p class="command"><span>$</span> cat about.txt</p>
+    <p>Étudiant en BTS SIO, je m'intéresse à la cybersécurité, aux systèmes et réseaux, ainsi qu'au développement d'outils. Ce portfolio rassemble mes projets et les compétences que je développe au fil de ma formation.</p>
+    <p class="command"><span>$</span> open --section projects <span class="cursor" aria-hidden="true"></span></p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#projets">voir les projets</a>
+      <a class="button" href="#contact">me contacter</a>
+    </div>
+  </div>
+</section>
 
 {% assign projets = site.projets | sort: "date" | reverse %}
 {% assign projets_ecole = projets | where: "type", "ecole" %}
 {% assign projets_perso = projets | where: "type", "perso" %}
 
-<section id="projets">
-  <h2>Projets</h2>
-
-  <details class="section-repliable">
-    <summary>Projets scolaires ({{ projets_ecole.size }})</summary>
-    <div class="section-contenu">
-      <p>Réalisations effectuées dans le cadre de ma formation BTS SIO.</p>
-      {% for p in projets_ecole %}
-      <article class="carte">
-        <h3><a href="{{ p.url | relative_url }}">École {{ forloop.index }} — {{ p.title }}</a></h3>
-        <p>{{ p.resume }}</p>
-        <p class="meta">{{ p.date | date: "%m/%Y" }} · {{ p.cadre }}</p>
-      </article>
-      {% endfor %}
+<section id="projets" class="page-section">
+  <h2><span class="prompt">$</span> ls ~/projets</h2>
+  <div class="terminal-window project-window">
+    <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span><span class="terminal-path">~/projets</span></div>
+    <div class="terminal-body project-groups">
+      <details class="section-repliable" open>
+        <summary>projets_ecole/ <span class="count">{{ projets_ecole.size }}</span></summary>
+        <div class="section-contenu">
+          {% for p in projets_ecole %}
+          <article class="carte">
+            <p class="project-date">{{ p.date | date: "%Y" }}</p>
+            <div class="project-info">
+              <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+              <p>{{ p.resume }}</p>
+              <p class="meta">{{ p.date | date: "%m/%Y" }}{% if p.cadre %} · {{ p.cadre }}{% endif %}</p>
+            </div>
+            <span class="project-kind">[ école ]</span>
+          </article>
+          {% endfor %}
+          {% if projets_ecole.size == 0 %}<p class="empty-state">Aucun projet scolaire publié pour le moment.</p>{% endif %}
+        </div>
+      </details>
+      <details class="section-repliable" open>
+        <summary>projets_perso/ <span class="count">{{ projets_perso.size }}</span></summary>
+        <div class="section-contenu">
+          {% for p in projets_perso %}
+          <article class="carte">
+            <p class="project-date">{{ p.date | date: "%Y" }}</p>
+            <div class="project-info">
+              <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+              <p>{{ p.resume }}</p>
+              <p class="meta">{{ p.date | date: "%m/%Y" }}{% if p.cadre %} · {{ p.cadre }}{% endif %}</p>
+            </div>
+            <span class="project-kind">[ perso ]</span>
+          </article>
+          {% endfor %}
+          {% if projets_perso.size == 0 %}<p class="empty-state">Aucun projet personnel publié pour le moment.</p>{% endif %}
+        </div>
+      </details>
     </div>
-  </details>
-
-  <details class="section-repliable">
-    <summary>Projets personnels ({{ projets_perso.size }})</summary>
-    <div class="section-contenu">
-      <p>Projets réalisés en dehors des activités scolaires pour approfondir mes compétences.</p>
-      {% for p in projets_perso %}
-      <article class="carte">
-        <h3><a href="{{ p.url | relative_url }}">Perso {{ forloop.index }} — {{ p.title }}</a></h3>
-        <p>{{ p.resume }}</p>
-        <p class="meta">{{ p.date | date: "%m/%Y" }} · {{ p.cadre }}</p>
-      </article>
-      {% endfor %}
-    </div>
-  </details>
+  </div>
+  <a class="command-link" href="#competences">cd ~/competences — voir les compétences</a>
 </section>
 
-<section id="competences">
-  <h2>Compétences du bloc 1</h2>
-  <div class="defile">
+<section id="competences" class="page-section">
+  <h2><span class="prompt">~/</span> compétences</h2>
+  <div class="terminal-window">
+    <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span><span class="terminal-path">~/competences</span></div>
+    <div class="defile">
       <table>
         <thead>
           <tr>
             <th scope="col" rowspan="2">Compétence</th>
-            {% if projets_ecole.size > 0 %}
-            <th scope="col" colspan="{{ projets_ecole.size }}">École</th>
-            {% endif %}
-            {% if projets_perso.size > 0 %}
-            <th scope="col" colspan="{{ projets_perso.size }}">Perso</th>
-            {% endif %}
+            {% if projets_ecole.size > 0 %}<th scope="col" colspan="{{ projets_ecole.size }}">École</th>{% endif %}
+            {% if projets_perso.size > 0 %}<th scope="col" colspan="{{ projets_perso.size }}">Perso</th>{% endif %}
           </tr>
           <tr>
-            {% for p in projets_ecole %}
-            <th scope="col"><a href="{{ p.url | relative_url }}">{{ forloop.index }}</a></th>
-            {% endfor %}
-            {% for p in projets_perso %}
-            <th scope="col"><a href="{{ p.url | relative_url }}">{{ forloop.index }}</a></th>
-            {% endfor %}
+            {% for p in projets_ecole %}<th scope="col"><a href="{{ p.url | relative_url }}">{{ forloop.index }}</a></th>{% endfor %}
+            {% for p in projets_perso %}<th scope="col"><a href="{{ p.url | relative_url }}">{{ forloop.index }}</a></th>{% endfor %}
           </tr>
         </thead>
         <tbody>
         {% for c in site.data.competences %}
           <tr>
             <th scope="row">{{ c.libelle }}</th>
-            {% for p in projets_ecole %}
-            <td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : École {{ forloop.index }}">X</a>{% endif %}</td>
-            {% endfor %}
-            {% for p in projets_perso %}
-            <td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : Perso {{ forloop.index }}">X</a>{% endif %}</td>
-            {% endfor %}
+            {% for p in projets_ecole %}<td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : École {{ forloop.index }}">×</a>{% endif %}</td>{% endfor %}
+            {% for p in projets_perso %}<td class="case">{% if p.competences contains c.code %}<a href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} : Perso {{ forloop.index }}">×</a>{% endif %}</td>{% endfor %}
           </tr>
         {% endfor %}
         </tbody>
       </table>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="page-section">
+  <h2><span class="prompt">$</span> contact</h2>
+  <p class="section-intro">Une question sur un projet, une idée ou une opportunité ? Tu peux me contacter par e-mail.</p>
+  <div class="terminal-window contact-window">
+    <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span><span class="terminal-path">~/contact</span></div>
+    <div class="terminal-body">
+      <p class="command"><span>$</span> mail -s "hello"</p>
+      {% if site.email != "" %}
+      <a class="button button-primary" href="mailto:{{ site.email }}">envoyer un e-mail</a>
+      {% else %}
+      <p class="empty-state">L'adresse e-mail n'est pas encore configurée.</p>
+      {% endif %}
+    </div>
   </div>
 </section>
