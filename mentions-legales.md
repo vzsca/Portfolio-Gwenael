@@ -8,7 +8,12 @@ permalink: /mentions-legales/
 
 <p class="legal-intro">Informations relatives à l'éditeur, à l'hébergement et à l'utilisation de ce portfolio.</p>
 
-<section class="legal-grid">
+<div class="term legal-terminal">
+  <div class="term-bar">
+    <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+    <span class="term-title">~/portfolio/mentions-legales.md</span>
+  </div>
+  <section class="legal-grid">
   <article class="legal-card">
     <span class="legal-label">01</span>
     <h2>Éditeur du site</h2>
@@ -41,5 +46,6 @@ permalink: /mentions-legales/
     <p>Le code HTML et CSS est publié sous licence MIT, conformément au fichier <code>LICENSE</code> du dépôt.</p>
   </article>
 </section>
+</div>
 
 <p class="legal-back"><a href="{{ '/' | relative_url }}">← Retour à l'accueil</a></p>
