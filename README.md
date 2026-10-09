@@ -1,50 +1,84 @@
 # Portfolio BTS SIO — Gwenaël PLEDEL
 
-Portfolio professionnel réalisé dans le cadre du BTS SIO et publié gratuitement avec **Jekyll + GitHub Pages**.
+Portfolio personnel réalisé dans le cadre du BTS SIO et publié gratuitement avec **Jekyll et GitHub Pages**.
 
 🌐 **Site public :** https://vzsca.github.io/Portfolio-Gwenael/
 
-## À propos
+## Présentation
 
-Ce portfolio présente mes réalisations scolaires et personnelles, ainsi que les compétences du bloc 1 du BTS SIO auxquelles elles sont associées. Je m'intéresse particulièrement à la **cybersécurité**, au **pentest** et à l'administration des systèmes et réseaux.
+Ce site présente mon profil, mes réalisations scolaires et personnelles ainsi que les compétences du bloc 1 du BTS SIO associées à ces projets. Je m'intéresse particulièrement à la **cybersécurité**, au **pentest**, aux systèmes et aux réseaux.
 
-## Direction visuelle
+Le portfolio est conçu pour évoluer au fil de ma formation et servir de support pour présenter mes travaux, notamment dans le cadre de la recherche de stage et de l'épreuve E5.
 
-Le site adopte une esthétique inspirée des terminaux et éditeurs de code : fond sombre, accents verts, fenêtres avec barre supérieure, typographie monospace et interface volontairement épurée. Le site reste une page web classique, navigable au clavier et adaptée aux écrans mobiles. Le contenu est en français.
+## Identité visuelle et interface
 
-## Structure
+Le site utilise un thème sombre inspiré des terminaux Linux et des éditeurs de code :
 
-- `index.html` — page d'accueil, projets, profil, tableau des compétences et contact
-- `_projets/` — fiches de réalisations alimentées automatiquement sur l'accueil
-- `_layouts/` — mises en page Jekyll pour le site et les fiches projets
-- `_data/competences.yml` — référentiel des six compétences
-- `css/style.css` — styles et adaptation mobile
-- `images/` — captures utilisées dans les fiches
+- arrière-plan très sombre, panneaux discrets et accents verts ;
+- fenêtres de type terminal avec barre supérieure et trois pastilles ;
+- typographies **JetBrains Mono** et **Space Grotesk** ;
+- interface sobre, sans éléments décoratifs superflus ;
+- navigation commune entre l'accueil, les fiches projets et les mentions légales ;
+- mise en page responsive pour les écrans d'ordinateur et de téléphone ;
+- états de survol et indicateurs visuels cohérents avec la palette du site.
+
+Les fiches projets et la page des mentions légales reprennent la même identité visuelle que l'accueil, afin d'éviter les ruptures de style entre les pages.
+
+## Fonctionnalités
+
+- Présentation du profil et des objectifs professionnels.
+- Classement automatique des projets scolaires et personnels.
+- Tableau des compétences du bloc 1 relié aux fiches projets.
+- Pages détaillées pour les réalisations, avec contexte, moyens, étapes, preuves et bilan.
+- Page de mentions légales.
+- Liens de contact et vers GitHub / LinkedIn.
+- Génération statique avec Jekyll et publication par GitHub Pages.
+
+## Organisation du dépôt
+
+- `index.html` — accueil, profil, projets, tableau des compétences et contact
+- `_projets/` — fiches des réalisations, générées automatiquement
+- `_layouts/default.html` — structure commune, navigation et pied de page
+- `_layouts/projet.html` — mise en page des fiches projets
+- `_data/competences.yml` — référentiel des compétences
+- `css/style.css` — thème visuel, composants et règles responsive
+- `images/` — captures utilisées dans les fiches projets
 - `mentions-legales.md` — mentions légales
-- `_config.yml` — configuration Jekyll
+- `_config.yml` — configuration Jekyll, URL, collection et coordonnées
 - `LICENSE` — licence du code
 
 ## Ajouter une réalisation
 
-1. Copier le modèle `_projets/_A-COPIER.md` dans un nouveau fichier du dossier `_projets/`.
-2. Nommer le fichier au format `AAAA-MM-sujet.md`, en minuscules, avec des tirets.
-3. Renseigner le contexte, les moyens, les étapes, les preuves et ce que j'en retiens.
-4. Définir le champ `type` à `ecole` ou `perso`, un résumé et les codes de compétences démontrées.
-5. Ajouter les captures nécessaires dans `images/` avec un texte alternatif pertinent.
-6. Faire un commit puis vérifier le déploiement GitHub Pages.
+1. Copier `_projets/_A-COPIER.md` dans le dossier `_projets/`.
+2. Nommer le fichier au format `AAAA-MM-sujet.md`, avec des minuscules et des tirets.
+3. Renseigner les métadonnées Jekyll : titre, date, cadre, type, résumé et compétences.
+4. Décrire le contexte, les moyens, les étapes réalisées, les preuves et les enseignements tirés.
+5. Ajouter les captures utiles dans `images/` avec un texte alternatif descriptif.
+6. Vérifier les liens et le rendu de la fiche, puis commit les changements.
+7. Contrôler le déploiement GitHub Pages sur ordinateur et mobile.
 
-La page d'accueil classe automatiquement les réalisations en **projets scolaires** et **projets personnels** et met à jour le tableau des compétences.
+La page d'accueil trie les fiches à partir de leur champ `type` (`ecole` ou `perso`) et génère les liens ainsi que le tableau des compétences depuis les données des projets.
 
-## Publication et vérifications
+## Publication et maintenance
 
-Le site est généré par Jekyll et publié avec GitHub Pages. Après chaque modification importante, vérifier le rendu sur ordinateur et mobile, les liens des projets, les mentions légales et le déploiement.
+Le site est publié via GitHub Pages à partir de la branche `main). Jekyll génère les pages à partir des fichiers Markdown, des layouts et des données du dépôt.
+
+Après une modification importante, vérifier notamment :
+
+- le chargement du CSS et des polices ;
+- la navigation et les liens entre les pages ;
+- l'affichage des fiches projets et des mentions légales ;
+- la lisibilité sur ordinateur et téléphone ;
+- le statut du déploiement GitHub Pages.
+
+La feuille de style utilise un paramètre de version dans le layout pour faciliter le rafraîchissement du cache après une modification visuelle.
 
 ## Licences
 
-- **Code HTML/CSS et éléments techniques du site :** licence MIT.
+- **Code HTML/CSS et éléments techniques :** licence MIT.
 - **Contenu éditorial et captures personnelles :** licence CC BY 4.0 lorsque cette licence est indiquée sur le site.
 
-Voir `LICENSE` et les [mentions légales](https://vzsca.github.io/Portfolio-Gwenael/mentions-legales/).
+Consulter le fichier `LICENSE` et les [mentions légales](https://vzsca.github.io/Portfolio-Gwenael/mentions-legales/).
 
 ## Auteur
 
