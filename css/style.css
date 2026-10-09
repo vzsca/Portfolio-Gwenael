@@ -131,7 +131,7 @@ main > article img { display: block; max-width: 100%; height: auto; border: 1px 
 .comp-liste { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 18px 0; }
 .comp { display: inline-block; border: 1px solid var(--line); background: var(--panel); color: var(--green); padding: 4px 8px; border-radius: 3px; font-size: 12px; }
 .legal-intro { max-width: 65ch; color: var(--muted); font-size: 13px; }
-.legal-terminal { margin-top: 22px; box-shadow: 0 16px 40px rgba(0,0,0,.18); }
+.legal-terminal { width: 100%; max-width: 872px; margin: 22px auto 0; box-shadow: 0 16px 40px rgba(0,0,0,.18); }
 .legal-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; margin: 0; padding: 18px; }
 .legal-card { min-width: 0; background: #0b120e; border: 1px solid var(--line); border-radius: 4px; padding: 18px; }
 .legal-card h2 { margin: 8px 0 12px; font-size: 18px; }
