@@ -1,30 +1,88 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang }}">
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.resume | default: site.description }}">
-  <link rel="stylesheet" href="{{ '/css/style.css?v=4' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/style.css?v=6' | relative_url }}">
 </head>
 <body>
   <header>
-    <p class="site"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
-    <nav aria-label="Menu principal">
+    <p class="site"><a href="{{ '/' | relative_url }}">~/{{ site.title | slugify }}</a></p>
+    <nav aria-label="Navigation principale" data-i18n-aria="navLabel">
       <ul>
-        <li><a href="{{ '/' | relative_url }}#projets">Projets</a></li>
-        <li><a href="{{ '/' | relative_url }}#competences">Compétences</a></li>
-        <li><a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a></li>
+        <li><a href="{{ '/' | relative_url }}"><span class="nav-prompt">$</span> <span data-i18n="navHome">accueil</span></a></li>
+        <li><a href="{{ '/' | relative_url }}#projets" data-i18n="navProjects">projets</a></li>
+        <li><a href="{{ '/' | relative_url }}#competences" data-i18n="navSkills">compétences</a></li>
+        <li><a href="{{ '/mentions-legales/' | relative_url }}" data-i18n="navLegal">mentions légales</a></li>
       </ul>
     </nav>
+    <div class="language-switch" role="group" aria-label="Language / Langue">
+      <button type="button" class="language-button is-active" data-lang="fr" aria-pressed="true">FR</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" class="language-button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
   </header>
-
   <main>
 {{ content }}
   </main>
-
   <footer>
-    <p>{% if site.email != "" %}<a href="mailto:{{ site.email }}">{{ site.email }}</a> · {% endif %}{% if site.linkedin != "" %}<a href="{{ site.linkedin }}">LinkedIn</a> · {% endif %}contenu sous licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a> · <a href="{{ '/mentions-legales/' | relative_url }}">mentions légales</a></p>
+    <p>{% if site.email != "" %}<a href="mailto:{{ site.email }}" data-i18n="footerContact">contact</a> · {% endif %}{% if site.linkedin != "" %}<a href="{{ site.linkedin }}">LinkedIn</a> · {% endif %}<span data-i18n="footerLicense">contenu sous licence</span> <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a> · <a href="{{ '/mentions-legales/' | relative_url }}" data-i18n="navLegal">mentions légales</a></p>
+    <p class="footer-note">© {{ site.time | date: "%Y" }} {{ site.title }} — <span data-i18n="footerMade">construit avec du code.</span></p>
   </footer>
+<script>
+(function () {
+  const translations = {
+    fr: {
+      navLabel:"Navigation principale", navHome:"accueil", navProjects:"projets", navSkills:"compétences", navLegal:"mentions légales",
+      tagline:"Étudiant en BTS SIO, intéressé par la cybersécurité et le pentest.",
+      about:"Je suis étudiant en première année de BTS SIO. Je m'intéresse à la cybersécurité, aux systèmes et réseaux, ainsi qu'au développement d'outils. Ce portfolio rassemble mes projets et les compétences que je développe au fil de ma formation.",
+      viewProjects:"voir les projets", getInTouch:"me contacter", projectsTitle:"ls ~/projets", schoolProjects:"projets_ecole/", personalProjects:"projets_perso/",
+      schoolDescription:"Réalisations effectuées dans le cadre de ma formation BTS SIO.", personalDescription:"Projets réalisés en dehors des activités scolaires pour approfondir mes compétences.",
+      schoolTag:"[ école ]", personalTag:"[ perso ]", noSchoolProjects:"Aucun projet scolaire publié pour le moment.", noPersonalProjects:"Aucun projet personnel publié pour le moment.",
+      skillsLink:"cd ~/competences — voir les compétences", skillsTitle:"compétences", skillColumn:"Compétence", schoolTagPlain:"École", personalTagPlain:"Perso",
+      contactTitle:"contact", contactIntro:"Une question sur un projet, une idée ou une opportunité ? Tu peux me contacter par e-mail.", sendEmail:"envoyer un e-mail", noEmail:"L'adresse e-mail n'est pas encore configurée.",
+      footerContact:"contact", footerLicense:"contenu sous licence", footerMade:"construit avec du code."
+    },
+    en: {
+      navLabel:"Main navigation", navHome:"home", navProjects:"projects", navSkills:"skills", navLegal:"legal notice",
+      tagline:"IT student interested in cybersecurity and penetration testing.",
+      about:"I'm a first-year IT student focused on cybersecurity, systems and networking, and tool development. This portfolio brings together my projects and the skills I'm building throughout my studies.",
+      viewProjects:"view projects", getInTouch:"get in touch", projectsTitle:"ls ~/projects", schoolProjects:"school_projects/", personalProjects:"personal_projects/",
+      schoolDescription:"Projects completed as part of my IT studies.", personalDescription:"Projects built outside coursework to deepen my skills.",
+      schoolTag:"[ school ]", personalTag:"[ personal ]", noSchoolProjects:"No school projects published yet.", noPersonalProjects:"No personal projects published yet.",
+      skillsLink:"cd ~/skills — explore skills", skillsTitle:"skills", skillColumn:"Skill", schoolTagPlain:"School", personalTagPlain:"Personal",
+      contactTitle:"contact", contactIntro:"Have a question about a project, an idea, or an opportunity? Feel free to contact me by email.", sendEmail:"send an email", noEmail:"The email address hasn't been configured yet.",
+      footerContact:"contact", footerLicense:"content licensed under", footerMade:"built with code."
+    }
+  };
+  const buttons = document.querySelectorAll("[data-lang]");
+  function setLanguage(lang) {
+    const dictionary = translations[lang] || translations.fr;
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(function (element) {
+      const key = element.getAttribute("data-i18n");
+      if (dictionary[key]) element.textContent = dictionary[key];
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (element) {
+      const key = element.getAttribute("data-i18n-aria");
+      if (dictionary[key]) element.setAttribute("aria-label", dictionary[key]);
+    });
+    buttons.forEach(function (button) {
+      const active = button.dataset.lang === lang;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+    try { localStorage.setItem("portfolio-language", lang); } catch (error) {}
+  }
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () { setLanguage(button.dataset.lang); });
+  });
+  let initial = "fr";
+  try { initial = localStorage.getItem("portfolio-language") || "fr"; } catch (error) {}
+  setLanguage(initial);
+})();
+</script>
 </body>
 </html>
