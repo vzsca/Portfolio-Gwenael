@@ -140,7 +140,7 @@ main > article img { display: block; max-width: 100%; height: auto; border: 1px 
 .legal-card a { color: var(--green); border-bottom: 1px solid rgba(74,222,128,.35); overflow-wrap: anywhere; }
 .legal-card code { color: var(--green); font-size: .95em; }
 .legal-label { color: var(--green); font-size: 11px; }
-.legal-back { margin-top: 24px; font-size: 13px; }
+.legal-back { width: 100%; max-width: 872px; margin: 24px auto 0; font-size: 13px; }
 .legal-back a { color: var(--green); }
 .projet-section { margin: 18px 0; }
 @media (max-width: 640px) {
