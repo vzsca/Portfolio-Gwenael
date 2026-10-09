@@ -35,8 +35,8 @@ permalink: /mentions-legales/
 
       <article class="legal-card">
         <h2>Données personnelles</h2>
-        <p>Ce site ne dépose aucun cookie, ne contient aucun formulaire et ne mesure pas l'audience.</p>
-        <p>Aucune donnée n'est collectée sur les visiteurs.</p>
+        <p>Ce site ne comporte aucun formulaire ni outil de mesure d'audience. Les polices sont chargées depuis Google Fonts ; cette requête peut transmettre à Google des données techniques, notamment l'adresse IP.</p>
+        <p>Pour en savoir plus sur le traitement de ces données, consultez la <a href="https://policies.google.com/privacy?hl=fr" target="_blank" rel="noopener noreferrer">politique de confidentialité de Google</a>.</p>
       </article>
 
       <article class="legal-card">
