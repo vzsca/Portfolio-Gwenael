@@ -28,9 +28,9 @@ nav a { color: var(--muted); font-size: 12px; transition: color .15s; }
 nav a:hover, nav a.active { color: var(--text); }
 nav a.active::before { content: "$ "; color: var(--green); }
 main { display: block; }
-.hero { min-height: calc(100svh - 54px); display: flex; align-items: center; justify-content: center; padding-top: 0; padding-bottom: 0; }
+.hero { min-height: calc(100svh - 54px); display: flex; align-items: center; justify-content: center; padding-top: 28px; padding-bottom: 28px; }
 .term { background: var(--panel); border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
-.hero-term { box-shadow: 0 20px 50px rgba(0,0,0,.28); }
+.hero-term { width: 100%; max-width: 872px; box-shadow: 0 20px 50px rgba(0,0,0,.28); }
 .term-bar { position: relative; display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 13px; background: var(--bar); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 11px; }
 .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; flex: 0 0 auto; }
 .dot.r { background: var(--red); }
@@ -102,7 +102,7 @@ footer a.hl { color: var(--green); border-bottom: 1px solid var(--green); }
   .brand { display: none; }
   nav { justify-content: center; gap: 13px; }
   nav a { font-size: 10px; }
-  .hero { min-height: calc(100svh - 50px); padding-top: 18px; padding-bottom: 18px; }
+  .hero { min-height: calc(100svh - 50px); padding-top: 22px; padding-bottom: 22px; }
   .term-body { padding: 22px 18px; }
   .hero h1 { font-size: 35px; }
   .wrap > section { margin-top: 72px; }
