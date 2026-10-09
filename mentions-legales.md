@@ -4,9 +4,17 @@ title: Mentions légales
 permalink: /mentions-legales/
 ---
 
-# Mentions légales
-
-<p class="legal-intro">Informations relatives à l'éditeur, à l'hébergement et à l'utilisation de ce portfolio.</p>
+<div class="term legal-heading">
+  <div class="term-bar">
+    <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+    <span class="term-title">~/mentions-legales</span>
+  </div>
+  <div class="term-body profil">
+    <p class="prompt">~/mentions-legales</p>
+    <h1>Mentions légales</h1>
+    <p>Informations relatives à l'éditeur, à l'hébergement et à l'utilisation de ce portfolio.</p>
+  </div>
+</div>
 
 <div class="term legal-terminal">
   <div class="term-bar">
