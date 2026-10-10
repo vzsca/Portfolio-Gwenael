@@ -36,23 +36,6 @@ Travail individuel réalisé dans le cadre de la formation BTS SIO. J'utilise un
 - Fiches projets générées à partir de fichiers Markdown.
 - Tableau des compétences lié aux projets.
 - Page des mentions légales harmonisée avec le thème général.
-- Captures de l'interface et de la publication d'origine.
-
-### Captures
-
-**Affichage sur ordinateur**
-
-![Capture du portfolio sur ordinateur]({{ "/images/Capture%20d%27%C3%A9cran%202026-10-07%20142953.png" | relative_url }})
-
-**Publication GitHub Pages**
-
-![Publication GitHub Pages réussie]({{ "/images/Capture%20d%27%C3%A9cran%202026-10-07%20143029.png" | relative_url }})
-
-**Affichage sur mobile**
-
-![Capture du portfolio sur mobile]({{ "/images/Screenshot_20261007_143015_Chrome.jpg" | relative_url }})
-
-Les captures montrent une version antérieure du site ; l'interface a depuis été ajustée et harmonisée.
 
 ## Ce que j'en retiens
 
