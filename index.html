@@ -100,10 +100,10 @@ title: Accueil
             <tr>
               <td class="skill">{{ c.libelle }}</td>
               {% for p in projets_ecole %}
-              <td class="c">{% if p.competences contains c.code %}<a class="chk" href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} — projet scolaire : {{ p.title }}">×</a>{% endif %}</td>
+              <td class="c">{% if p.competences contains c.code %}<a class="chk" href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} — projet scolaire : {{ p.title }}">✓</a>{% endif %}</td>
               {% endfor %}
               {% for p in projets_perso %}
-              <td class="c">{% if p.competences contains c.code %}<a class="chk" href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} — projet personnel : {{ p.title }}">×</a>{% endif %}</td>
+              <td class="c">{% if p.competences contains c.code %}<a class="chk" href="{{ p.url | relative_url }}" aria-label="{{ c.libelle }} — projet personnel : {{ p.title }}">✓</a>{% endif %}</td>
               {% endfor %}
             </tr>
           {% endfor %}
