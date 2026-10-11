@@ -61,4 +61,7 @@ permalink: /mentions-legales/
   </div>
 </section>
 
-<p class="legal-back"><a href="{{ '/' | relative_url }}">← Retour à l'accueil</a></p>
+<div class="project-back">
+  <span class="project-prompt">cd ~/</span>
+  <a class="btn" href="{{ '/' | relative_url }}">← Retour à l'accueil</a>
+</div>
