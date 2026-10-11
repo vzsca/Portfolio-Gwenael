@@ -833,7 +833,8 @@ footer a.hl
 
 /* Fiches projets : présentation en terminal, cohérente avec l'accueil */ .project-page
 {
-  width: min(100% - 40px, 872px);
+  width: calc(100% - 40px);
+  max-width: 832px;
   margin: 42px auto 0;
 }
 
@@ -1030,7 +1031,7 @@ footer a.hl
 {
   .project-page
   {
-    width: calc(100% - 28px);
+    width: calc(100% - 36px);
     margin-top: 24px;
   }
   .project-body
