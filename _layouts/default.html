@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ site.lang | default: 'fr' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080d0a">
   <title>{% if page.title and page.title != "Accueil" %}{{ page.title }} · {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.resume | default: site.description | escape }}">
-  <link rel="stylesheet" href="{{ '/css/style.css?v=26' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+  <script src="{{ '/js/navigation.js' | relative_url }}" defer></script>
 </head>
 <body>
   <header>
@@ -34,22 +35,5 @@
       </nav>
     </div>
   </footer>
-  <script>
-    (function () {
-      var links = document.querySelectorAll('header nav a[href*="#"]');
-      if (!('IntersectionObserver' in window)) return;
-      var sections = ['top', 'projets', 'competences'].map(function (id) { return document.getElementById(id); }).filter(Boolean);
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          links.forEach(function (link) {
-            var target = new URL(link.href, window.location.href).hash;
-            link.classList.toggle('active', target === '#' + entry.target.id);
-          });
-        });
-      }, { rootMargin: '-35% 0px -55% 0px' });
-      sections.forEach(function (section) { observer.observe(section); });
-    })();
-  </script>
 </body>
 </html>
