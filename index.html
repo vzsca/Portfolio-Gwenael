@@ -29,7 +29,7 @@ title: Accueil
     </section>
   </div>
 
-  {% assign projets = site.projets | sort: "date" | reverse %}
+  {% assign projets = site.projets | where_exp: "p", "p.afficher != false" | sort: "date" | reverse %}
   {% assign projets_ecole = projets | where: "type", "ecole" %}
   {% assign projets_perso = projets | where: "type", "perso" %}
 
