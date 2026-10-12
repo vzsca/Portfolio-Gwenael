@@ -41,7 +41,8 @@ Les fiches projets et la page des mentions légales reprennent la même identit�
 - `_layouts/default.html` — structure commune, navigation et pied de page
 - `_layouts/projet.html` — mise en page des fiches projets
 - `_data/competences.yml` — référentiel des compétences
-- `css/style.css` — thème visuel, composants et règles responsive
+- `css/style.css` — styles and responsive layout
+- `js/navigation.js` — active-section navigation, loaded with `defer` — thème visuel, composants et règles responsive
 - `images/` — captures utilisées dans les fiches projets
 - `mentions-legales.md` — mentions légales
 - `_config.yml` — configuration Jekyll, URL, collection et coordonnées
