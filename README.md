@@ -2,7 +2,7 @@
 
 Portfolio personnel réalisé dans le cadre du BTS SIO et publié gratuitement avec **Jekyll et GitHub Pages**.
 
-🌐 **Site public :** https://vzsca.github.io/Portfolio-Gwenael/
+🌐 **Site public :** <a href="https://vzsca.github.io/Portfolio-Gwenael/" target="_blank" rel="noopener noreferrer">https://vzsca.github.io/Portfolio-Gwenael/</a>
 
 ## Présentation
 
